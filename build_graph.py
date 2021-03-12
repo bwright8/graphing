@@ -19,6 +19,7 @@ from neo4j.exceptions import ServiceUnavailable
 
 load_dotenv()
 local_dev = os.getenv("LOCAL_DEV") == "true"
+graph_db_psswrd = os.getenv("GRAPH_DB_PSSWRD")
 
 
 def get_database_connection(local_dev=True):
@@ -165,7 +166,7 @@ class COB_Graph_Driver:
 
 
 if __name__ == "__main__":
-    greeter = COB_Graph_Driver("bolt://localhost:7687", "neo4j", "yigith")
+    greeter = COB_Graph_Driver("bolt://localhost:7687", "neo4j", graph_db_psswrd)
     filing_num_dict = get_filing_nums(cursor)
     cob_relations = get_charter_officer_data(cursor)
     #greeter.print_greeting("hello, world")
