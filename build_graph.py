@@ -59,6 +59,7 @@ class Graph_Driver:
 
     @staticmethod
     def _create_and_return_business(tx,filing_num,business_name):
+        #creation of a business-type node
         result = tx.run("Create (a:Business) "
                         "SET a.filing_num = $filing_num "
                         "SET a.name = $business_name "
@@ -69,6 +70,7 @@ class Graph_Driver:
 
     @staticmethod
     def _create_and_return_cob_relation(tx,fn1,fn2):
+        #creation of a charter-officer-business type relation
         result = tx.run("MATCH"
                         "   (a:Business), "
                         "   (b:Business) "
@@ -80,6 +82,7 @@ class Graph_Driver:
         return result.single()
 
     def create_all_nodes(self,cob_node_data_dictionary):
+        #method to create all nodes for the graph, to populate it
         with self.driver.session() as session:
             i = 0
             for key in cob_node_data_dictionary.keys():
@@ -92,6 +95,9 @@ class Graph_Driver:
             print(result)
             
     def create_all_cob_edges(self,cob_data,filing_num_dict):
+
+        #method to populate charter-officer-business edges for the graph
+        
         with self.driver.session() as session:
             i = 0
             for entry in cob_data:
@@ -121,6 +127,7 @@ class Graph_Driver:
 
     @staticmethod
     def _create_filing_number_index(tx):
+        #create an index on filing_num for fast matching
         query = ("CREATE INDEX fn_index IF NOT EXISTS FOR (n:Business) ON (n.filing_num)")
         result = tx.run(query)
         return(result)
