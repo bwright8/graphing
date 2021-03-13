@@ -30,10 +30,10 @@ cursor = conn.cursor()
 def get_filing_nums(curs):
 
 
-    curs.execute("SELECT name,filing_num FROM master LIMIT 50000;")
+    # curs.execute("SELECT name,filing_num FROM master LIMIT 50000;")
     #for testing purposes
 
-    # curs.execute("SELECT name,filing_num FROM master;")
+    curs.execute("SELECT name,filing_num FROM master;")
 
 
     filing_num_dict = {}
