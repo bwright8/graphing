@@ -1,18 +1,14 @@
 import os
-import sys
-from io import StringIO
+
 from dotenv import load_dotenv
 import pandas as pd
 import psycopg2
 from psycopg2 import sql
 import psycopg2.extras as extras
-import nameparser
-import probablepeople
-import usaddress
+
 import neo4j
 from neo4j import GraphDatabase
 import logging
-from neo4j.exceptions import ServiceUnavailable
 
 
 load_dotenv()
@@ -112,6 +108,7 @@ class Graph_Driver:
                 i += 1
                 if(i % 100000 ==0):
                     print(i) 
+                    print(result)
 
 
 
