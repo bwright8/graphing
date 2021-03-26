@@ -1,0 +1,1 @@
+match (n) where n.address1 <> "" create(m:Address) SET m.address = n.address1 SET m.zip_code = n.zip_code CREATE (n)-[r:is_at]->(m) return n,r,m

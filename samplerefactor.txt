@@ -1,0 +1,1 @@
+match (a:Address) with collect(a) as nodes call apoc.refactor.mergeNodes(nodes) yield node return node

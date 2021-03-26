@@ -44,8 +44,16 @@ def get_filing_nums(curs):
     return(filing_num_dict)
 
 def get_charter_officer_data(curs):
-        curs.execute("SELECT master.filing_num,name,business_name FROM master INNER JOIN charter_officer_business ON master.filing_num = charter_officer_business.filing_num;")
-        return(curs.fetchall())
+    curs.execute("SELECT master.filing_num,name,business_name FROM master INNER JOIN charter_officer_business ON master.filing_num = charter_officer_business.filing_num;")
+    return(curs.fetchall())
+
+def get_address_book(curs):
+    curs.execute("SELECT * FROM address;")
+    return(curs.fetchall())       
+
+def get_corp_type_ids(curs):
+    curs.execute("SELECT filing_num, corp_type_id FROM master;")
+    return(curs.fetchall()) 
 
 class Graph_Driver:
 
@@ -125,6 +133,44 @@ class Graph_Driver:
             for record in result:
                 print("Found business: {record}".format(record=record))
 
+
+    def update_addresses(self,address_book):
+        
+        with self.driver.session() as session:
+            i = 0
+            for row in address_book:
+                fn = row[0]
+                address1 = row[2]
+                address2 = row[3]
+                city = row[4]
+                state = row[5]
+                zip_code = row[6]
+                zip_extension = row[7]
+                country = row[8]
+                result = session.write_transaction(self._update_address,fn,
+                    address1,address2,city,state,zip_code,zip_extension,
+                    country)
+                #print(result)
+                i +=1 
+                if(i % 1000000 ==0):
+                    print(i)
+                    print(result)
+    
+    def update_corp_type_ids(self,corp_ids):
+
+        with self.driver.session() as session:
+            i = 0
+            for row in corp_ids:
+                fn = row[0]
+                id = row[1]
+                result = session.write_transaction(self._update_corp_type_id,fn,id)
+                #print(result)
+                i +=1 
+                if(i % 1000000 ==0):
+                    print(i)
+                    print(result)
+            
+
     @staticmethod
     def _create_filing_number_index(tx):
         #create an index on filing_num for fast matching
@@ -143,11 +189,59 @@ class Graph_Driver:
         result = tx.run(query, business_name=business_name)
         return [record["name"] for record in result]
 
+    @staticmethod
+    def _update_corp_type_id(tx,fn,id):
+        query = (
+            "MATCH (b:Business) "
+            "WHERE b.filing_num = $fn "
+            "SET b.corp_type_id = $id "
+            "RETURN b"
+        )
+        result = tx.run(query,fn = fn, id = str(id))
+        return(result)
+
+    @staticmethod
+    def _update_address(tx,fn,address1,address2,city,state,zip_code,
+            zip_extension,country):
+
+        query = (
+            "MATCH (b:Business) "
+            "WHERE b.filing_num = $fn "
+            "SET b.address1 = $address1 "
+            "SET b.address2 = $address2 "
+            "SET b.city = $city "
+            "SET b.state = $state "
+            "SET b.zip_code = $zip_code "
+            "SET b.zip_extension = $zip_extension "
+            "SET b.country = $country "
+            "RETURN b"
+        )
+        result = tx.run(query,fn = fn, address1 = address1,
+            address2 = address2, city = city, state = state, 
+            zip_code = str(zip_code),zip_extension = str(zip_extension),
+            country = country)
+        return(result)
+        
 
 if __name__ == "__main__":
     graph_driver = Graph_Driver("bolt://localhost:7687", "neo4j", graph_db_psswrd)
-    master_filing_num_dict = get_filing_nums(cursor)
+    
+    # master_filing_num_dict = get_filing_nums(cursor)
+
+    """
     cob_relations = get_charter_officer_data(cursor)
     graph_driver.create_all_nodes(master_filing_num_dict)
     graph_driver.create_all_cob_edges(cob_relations, master_filing_num_dict)
+    """
+    
+    # corp_ids = get_corp_type_ids(cursor)
+    # graph_driver.update_corp_type_ids(corp_ids)
+
+    """
+    address_book = get_address_book(cursor) 
+    graph_driver.update_addresses(address_book)
+    """
+
+
+    
     graph_driver.close()
