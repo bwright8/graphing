@@ -7,4 +7,6 @@ This project is meant to build a network graph based on data from the project ht
 3.  Create a .env file with the same enviorment variables as the Sos_data_fun project 
 as well as "GRAPH_DB_PSSWRD  = your_neo4j_password"
 
-4. run the build_graph.py script
+4. make sure to install apoc plugins in neo4j for the database
+
+5. run the build_graph.py script
