@@ -155,6 +155,8 @@ class Graph_Driver:
                 if(i % 1000000 ==0):
                     print(i)
                     print(result)
+            #result = session.write_transaction(self._merge_addresses)
+            print(result)
     
     def update_corp_type_ids(self,corp_ids):
 
@@ -178,6 +180,25 @@ class Graph_Driver:
         result = tx.run(query)
         return(result)
 
+    @staticmethod
+    def _merge_addresses(tx):
+        query = ("MATCH (A)-[r:is_at]->(B) "
+            "WITH  count(r) as relsCount "
+            "MATCH (A)-[r:is_at]->(B) "
+            "WHERE relsCount > 1 "
+            "WITH A,B,collect(r) as rels "
+            "CALL apoc.refactor.mergeRelationships(rels,{properties:'combine'}) "
+            "YIELD rel RETURN rel")
+
+        query = ("MATCH (a:Address) "
+            "WITH a.address1 as address1 "
+            "COLLECT(a) as nodelist, COUNT(*) as count "
+            "WHERE count > 1 "
+            "CALL apoc.refactor.mergeNodes(nodelist) yield node return node "
+        )
+        
+        result = tx.run(query)
+        return(result)
 
     @staticmethod
     def _find_and_return_business(tx, business_name):
@@ -205,8 +226,9 @@ class Graph_Driver:
             zip_extension,country):
 
         query = (
-            "MATCH (b:Business) "
-            "WHERE b.filing_num = $fn "
+            "MATCH (s:Business) "
+            "WHERE s.filing_num = $fn "
+            "CREATE (b:Address) "
             "SET b.address1 = $address1 "
             "SET b.address2 = $address2 "
             "SET b.city = $city "
@@ -214,7 +236,8 @@ class Graph_Driver:
             "SET b.zip_code = $zip_code "
             "SET b.zip_extension = $zip_extension "
             "SET b.country = $country "
-            "RETURN b"
+            "CREATE (s)-[r:is_at]->(b)"
+            "RETURN r,b"
         )
         result = tx.run(query,fn = fn, address1 = address1,
             address2 = address2, city = city, state = state, 
@@ -234,13 +257,13 @@ if __name__ == "__main__":
     graph_driver.create_all_cob_edges(cob_relations, master_filing_num_dict)
     """
     
-    # corp_ids = get_corp_type_ids(cursor)
-    # graph_driver.update_corp_type_ids(corp_ids)
+    corp_ids = get_corp_type_ids(cursor)
+    graph_driver.update_corp_type_ids(corp_ids)
 
-    """
+    
     address_book = get_address_book(cursor) 
     graph_driver.update_addresses(address_book)
-    """
+    
 
 
     

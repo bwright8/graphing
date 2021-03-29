@@ -1,0 +1,10 @@
+match (n:Person) with n.name as name, Collect(n) as nodelist, count(*) as count where count > 1 call apoc.refactor.mergeNodes(nodelist) yield node return node
+
+MATCH (A)-[r]->(B) 
+WITH  count(r) as relsCount
+MATCH (A)-[r]->(B)
+WHERE relsCount > 1 
+WITH A,B,collect(r) as rels
+CALL apoc.refactor.mergeRelationships(rels,{properties:"combine"})
+YIELD rel RETURN rel
+
