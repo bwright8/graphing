@@ -5,10 +5,12 @@ import pandas as pd
 import psycopg2
 from psycopg2 import sql
 import psycopg2.extras as extras
+import postal_address
 
 import neo4j
 from neo4j import GraphDatabase
 import logging
+import update_TCAD_data
 
 
 load_dotenv()
@@ -47,6 +49,10 @@ def get_charter_officer_data(curs):
     curs.execute("SELECT master.filing_num,name,business_name FROM master INNER JOIN charter_officer_business ON master.filing_num = charter_officer_business.filing_num;")
     return(curs.fetchall())
 
+def get_registered_agent_business_data(curs):
+    curs.execute("SELECT master.filing_num,name,business_name FROM master INNER JOIN registered_agent_business ON master.filing_num = registered_agent_business.filing_num;")
+    return(curs.fetchall())
+
 def get_address_book(curs):
     curs.execute("SELECT * FROM address;")
     return(curs.fetchall())       
@@ -54,6 +60,11 @@ def get_address_book(curs):
 def get_corp_type_ids(curs):
     curs.execute("SELECT filing_num, corp_type_id FROM master;")
     return(curs.fetchall()) 
+
+def get_tcad_data():
+    df = update_TCAD_data.read_tcad()
+    return df
+
 
 class Graph_Driver:
 
@@ -100,6 +111,8 @@ class Graph_Driver:
                 if(i % 1000000 ==0):
                     print(i)
             result = session.write_transaction(self._create_filing_number_index)
+            result = session.write_transaction(self._create_business_name_index)
+
             print(result)
             
     def create_all_cob_edges(self,cob_data,filing_num_dict):
@@ -125,6 +138,82 @@ class Graph_Driver:
                     print(result)
 
 
+    @staticmethod
+    def _create_and_return_rab_relation(tx,fn1,fn2):
+        #creation of a rab type relation
+        result = tx.run("MATCH"
+                        "   (a:Business), "
+                        "   (b:Business) "
+
+                        "WHERE a.filing_num = $fn1 AND b.filing_num = $fn2 "
+                        "CREATE (b)-[r:is_registered_agent_business]->(a) "
+                        "RETURN type(r)", fn1 = fn1, fn2 = fn2)
+
+        return result.single()
+
+
+    def create_all_rab_edges(self,rab_data,filing_num_dict):
+
+        #method to populate registered-agent-business edges for the graph
+        
+        with self.driver.session() as session:
+            i = 0
+            for entry in rab_data:
+                try:
+                    thing1 = filing_num_dict[entry[1]]
+                    thing2 = filing_num_dict[entry[2]]
+
+                    result = session.write_transaction(self._create_and_return_rab_relation,thing1,thing2)
+                    #print(result)
+                   
+                except:
+                   pass
+
+                i += 1
+                if(i % 100000 ==0):
+                    print(i) 
+                    print(result)
+
+
+    @staticmethod
+    def _create_and_return_prop_owner_relation(tx,fn1,address1,zip_code):
+        #creation of a property_owner type relation
+        result = tx.run("MATCH"
+                        "   (a:Business), "
+                        "   (b:Address) "
+
+                        "WHERE a.filing_num = $fn1 AND b.address1 = $address1  AND b.zip_code = $zip_code "
+                        "CREATE (b)-[r:is_property_owner]->(a) "
+                        "RETURN type(r)", address1 = address1, zip_code = zip_code)
+
+        return result.single()
+
+
+    def create_prop_owner_edges(self,prop_data,filing_num_dict):
+
+        #method to populate prop-owner-business edges for the graph
+        
+        with self.driver.session() as session:
+            i = 0
+            for j in range(len(prop_data)):
+                try:
+
+                    busi = filing_num_dict[prop_data['prop_owner'][j]]
+                    address1 = prop_data['mail_add_2'][j]
+                    zip_code = prop_data['mail_zip'][j]
+
+                    result = session.write_transaction(self._create_and_return_prop_owner_relation,busi,address1,zip_code)
+                    #print(result)
+                    i += 1
+                    if(i % 10000 ==0):
+                        print(i) 
+                        print(result)
+                except:
+                   pass
+
+                
+
+
 
 
     def find_business(self, business_name):
@@ -147,15 +236,21 @@ class Graph_Driver:
                 zip_code = row[6]
                 zip_extension = row[7]
                 country = row[8]
+                pa = postal_address.address.Address(line1 = address1,line2 = address2,city_name = city,
+                    country_code = country,postal_code = zip_code).render()
                 result = session.write_transaction(self._update_address,fn,
                     address1,address2,city,state,zip_code,zip_extension,
-                    country)
+                    country,pa)
                 #print(result)
                 i +=1 
                 if(i % 1000000 ==0):
                     print(i)
                     print(result)
             #result = session.write_transaction(self._merge_addresses)
+
+            result = session.write_transaction(self._create_address1_index)
+            result = session.write_transaction(self._create_zip_code_index)
+            result = session.write_transaction(self._create_pa_index)
             print(result)
     
     def update_corp_type_ids(self,corp_ids):
@@ -181,6 +276,35 @@ class Graph_Driver:
         return(result)
 
     @staticmethod
+    def _create_business_name_index(tx):
+        #create an index on name for fast matching
+        query = ("CREATE INDEX name_index IF NOT EXISTS FOR (n:Business) ON (n.name)")
+        result = tx.run(query)
+        return(result)
+
+    @staticmethod
+    def _create_address1_index(tx):
+        #create an index on address for fast matching
+        query = ("CREATE INDEX add1_index IF NOT EXISTS FOR (n:Address) ON (n.address1)")
+        result = tx.run(query)
+        return(result)
+
+    @staticmethod
+    def _create_zip_code_index(tx):
+        #create an index on zip for fast matching
+        query = ("CREATE INDEX zip_index IF NOT EXISTS FOR (n:Address) ON (n.zip_code)")
+        result = tx.run(query)
+        return(result)
+
+    @staticmethod
+    def _create_pa_index(tx):
+        #create an index on pa for fast matching
+        query = ("CREATE INDEX pa_index IF NOT EXISTS FOR (n:Address) ON (n.pa)")
+        result = tx.run(query)
+        return(result)
+    
+
+    @staticmethod
     def _merge_addresses(tx):
         query = ("MATCH (A)-[r:is_at]->(B) "
             "WITH  count(r) as relsCount "
@@ -191,7 +315,7 @@ class Graph_Driver:
             "YIELD rel RETURN rel")
 
         query = ("MATCH (a:Address) "
-            "WITH a.address1 as address1 "
+            "WITH a.pa as pa "
             "COLLECT(a) as nodelist, COUNT(*) as count "
             "WHERE count > 1 "
             "CALL apoc.refactor.mergeNodes(nodelist) yield node return node "
@@ -223,7 +347,7 @@ class Graph_Driver:
 
     @staticmethod
     def _update_address(tx,fn,address1,address2,city,state,zip_code,
-            zip_extension,country):
+            zip_extension,country,pa):
 
         query = (
             "MATCH (s:Business) "
@@ -236,35 +360,45 @@ class Graph_Driver:
             "SET b.zip_code = $zip_code "
             "SET b.zip_extension = $zip_extension "
             "SET b.country = $country "
+            "SET b.pa = $pa "
             "CREATE (s)-[r:is_at]->(b)"
             "RETURN r,b"
         )
         result = tx.run(query,fn = fn, address1 = address1,
             address2 = address2, city = city, state = state, 
             zip_code = str(zip_code),zip_extension = str(zip_extension),
-            country = country)
+            country = country,pa = pa)
         return(result)
         
 
 if __name__ == "__main__":
     graph_driver = Graph_Driver("bolt://localhost:7687", "neo4j", graph_db_psswrd)
     
-    # master_filing_num_dict = get_filing_nums(cursor)
+    master_filing_num_dict = get_filing_nums(cursor)
 
     """
+    
     cob_relations = get_charter_officer_data(cursor)
     graph_driver.create_all_nodes(master_filing_num_dict)
     graph_driver.create_all_cob_edges(cob_relations, master_filing_num_dict)
-    """
+    
+
     
     corp_ids = get_corp_type_ids(cursor)
     graph_driver.update_corp_type_ids(corp_ids)
-
+    """
     
     address_book = get_address_book(cursor) 
     graph_driver.update_addresses(address_book)
     
+    
+    rab_relations = get_registered_agent_business_data(cursor)
+    graph_driver.create_all_rab_edges(rab_relations,master_filing_num_dict)
+    
+    #df = get_tcad_data()
+    #graph_driver.create_prop_owner_edges(df,master_filing_num_dict)
 
+    
 
     
     graph_driver.close()
