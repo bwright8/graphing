@@ -9,3 +9,6 @@ CALL apoc.refactor.mergeRelationships(rels,{properties:"combine"})
 YIELD rel RETURN rel
 
 match (b:Business {name : 'PDC3'})  MATCH (a:Address) where a.zip_code = "78028" create (b)-[r:is_at]->(a)  return a,b,r limit 300
+
+
+match (a:Address {zip_code: "79331"}) with collect(a) as nodes call apoc.refactor.mergeNodes(nodes) yield node return node

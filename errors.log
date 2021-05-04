@@ -16,3 +16,223 @@
 [Sat, 03 Apr 2021 12:13:11] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
 [Tue, 06 Apr 2021 14:49:04] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
 [Tue, 06 Apr 2021 14:50:11] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 14:59:15] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:00:37] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:01:39] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:02:39] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:04:37] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:05:42] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:06:42] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:07:40] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:08:37] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:09:35] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:11:55] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:12:56] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:13:09] ERROR [_bolt4.py._set_defunct:385] No data
+[Tue, 06 Apr 2021 15:13:09] ERROR [_bolt4.py._set_defunct:386] Failed to read from defunct connection IPv4Address(('localhost', 7687)) (IPv4Address(('127.0.0.1', 7687)))
+[Tue, 06 Apr 2021 15:13:09] WARNING [simple.py._run_transaction:330] Transaction failed and will be retried in 1.0217119462923727s (Failed to write to closed connection IPv4Address(('localhost', 7687)) (IPv4Address(('127.0.0.1', 7687))))
+[Tue, 06 Apr 2021 15:14:49] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:15:26] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:16:30] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:18:54] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:19:54] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:20:48] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:21:50] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:23:41] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:24:49] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Tue, 06 Apr 2021 15:27:04] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:27:34] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Tue, 06 Apr 2021 15:28:37] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Wed, 07 Apr 2021 11:01:46] INFO [update_TCAD_data.py.read_tcad:70] Reading TCAD data
+[Wed, 07 Apr 2021 11:02:59] INFO [update_TCAD_data.py.read_tcad:78] Successfully read TCAD data
+[Fri, 16 Apr 2021 11:36:34] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 11:36:35] INFO [base.py.index:147] indexing [1/?] - time: 0.13s - pairs: 5879/124750 - rr: 0.95287
+[Fri, 16 Apr 2021 11:36:35] INFO [base.py.index:158] indexing [1/?] - time: 0.13s - pairs_total: 5879/124750 - rr_total: 0.95287
+[Fri, 16 Apr 2021 11:36:53] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 11:36:55] INFO [base.py.index:147] indexing [1/?] - time: 1.68s - pairs: 174140/12497500 - rr: 0.98607
+[Fri, 16 Apr 2021 11:36:55] INFO [base.py.index:158] indexing [1/?] - time: 1.68s - pairs_total: 174140/12497500 - rr_total: 0.98607
+[Fri, 16 Apr 2021 11:42:42] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 11:44:19] INFO [base.py.index:147] indexing [1/?] - time: 96.58s - pairs: 11810800/1249975000 - rr: 0.99055
+[Fri, 16 Apr 2021 11:44:19] INFO [base.py.index:158] indexing [1/?] - time: 96.58s - pairs_total: 11810800/1249975000 - rr_total: 0.99055
+[Fri, 16 Apr 2021 11:44:19] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 11:47:36] INFO [base.py._compute:742] comparing [1/?] - time: 196.42s - pairs: 11810800
+[Fri, 16 Apr 2021 11:47:36] INFO [base.py._compute:751] comparing [1/?] - time: 196.42s - pairs_total: 11810800
+[Fri, 16 Apr 2021 11:47:36] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 11:48:56] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 11:50:34] INFO [base.py.index:147] indexing [1/?] - time: 97.31s - pairs: 10262206/1249975000 - rr: 0.99179
+[Fri, 16 Apr 2021 11:50:34] INFO [base.py.index:158] indexing [1/?] - time: 97.31s - pairs_total: 10262206/1249975000 - rr_total: 0.99179
+[Fri, 16 Apr 2021 11:50:34] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 11:52:59] INFO [base.py._compute:742] comparing [1/?] - time: 145.45s - pairs: 10262206
+[Fri, 16 Apr 2021 11:52:59] INFO [base.py._compute:751] comparing [1/?] - time: 145.45s - pairs_total: 10262206
+[Fri, 16 Apr 2021 11:53:00] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 13:07:48] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:07:49] INFO [base.py.index:147] indexing [1/?] - time: 1.27s - pairs: 154801/12497500 - rr: 0.98761
+[Fri, 16 Apr 2021 13:07:49] INFO [base.py.index:158] indexing [1/?] - time: 1.27s - pairs_total: 154801/12497500 - rr_total: 0.98761
+[Fri, 16 Apr 2021 13:07:49] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:08:00] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:08:01] INFO [base.py.index:147] indexing [1/?] - time: 1.22s - pairs: 180370/12497500 - rr: 0.98557
+[Fri, 16 Apr 2021 13:08:01] INFO [base.py.index:158] indexing [1/?] - time: 1.22s - pairs_total: 180370/12497500 - rr_total: 0.98557
+[Fri, 16 Apr 2021 13:08:01] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:08:05] INFO [base.py._compute:742] comparing [1/?] - time: 3.91s - pairs: 180370
+[Fri, 16 Apr 2021 13:08:05] INFO [base.py._compute:751] comparing [1/?] - time: 3.91s - pairs_total: 180370
+[Fri, 16 Apr 2021 13:08:05] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 13:12:12] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:12:14] INFO [base.py.index:147] indexing [1/?] - time: 2.53s - pairs: 225550/12497500 - rr: 0.98195
+[Fri, 16 Apr 2021 13:12:14] INFO [base.py.index:158] indexing [1/?] - time: 2.53s - pairs_total: 225550/12497500 - rr_total: 0.98195
+[Fri, 16 Apr 2021 13:12:14] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:12:21] INFO [base.py._compute:742] comparing [1/?] - time: 6.35s - pairs: 225550
+[Fri, 16 Apr 2021 13:12:21] INFO [base.py._compute:751] comparing [1/?] - time: 6.35s - pairs_total: 225550
+[Fri, 16 Apr 2021 13:12:21] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 13:12:43] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:12:44] INFO [base.py.index:147] indexing [1/?] - time: 0.50s - pairs: 107626/12497500 - rr: 0.99139
+[Fri, 16 Apr 2021 13:12:44] INFO [base.py.index:158] indexing [1/?] - time: 0.50s - pairs_total: 107626/12497500 - rr_total: 0.99139
+[Fri, 16 Apr 2021 13:12:44] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:12:46] INFO [base.py._compute:742] comparing [1/?] - time: 2.21s - pairs: 107626
+[Fri, 16 Apr 2021 13:12:46] INFO [base.py._compute:751] comparing [1/?] - time: 2.21s - pairs_total: 107626
+[Fri, 16 Apr 2021 13:12:46] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 13:13:26] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:13:26] INFO [base.py.index:147] indexing [1/?] - time: 0.51s - pairs: 96709/12497500 - rr: 0.99226
+[Fri, 16 Apr 2021 13:13:26] INFO [base.py.index:158] indexing [1/?] - time: 0.51s - pairs_total: 96709/12497500 - rr_total: 0.99226
+[Fri, 16 Apr 2021 13:13:26] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:13:28] INFO [base.py._compute:742] comparing [1/?] - time: 2.13s - pairs: 96709
+[Fri, 16 Apr 2021 13:13:28] INFO [base.py._compute:751] comparing [1/?] - time: 2.13s - pairs_total: 96709
+[Fri, 16 Apr 2021 13:13:28] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 13:13:51] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:13:52] INFO [base.py.index:147] indexing [1/?] - time: 0.46s - pairs: 92009/12497500 - rr: 0.99264
+[Fri, 16 Apr 2021 13:13:52] INFO [base.py.index:158] indexing [1/?] - time: 0.46s - pairs_total: 92009/12497500 - rr_total: 0.99264
+[Fri, 16 Apr 2021 13:13:52] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:13:54] INFO [base.py._compute:742] comparing [1/?] - time: 1.87s - pairs: 92009
+[Fri, 16 Apr 2021 13:13:54] INFO [base.py._compute:751] comparing [1/?] - time: 1.87s - pairs_total: 92009
+[Fri, 16 Apr 2021 13:13:54] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 13:14:07] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:14:07] INFO [base.py.index:147] indexing [1/?] - time: 0.52s - pairs: 107406/12497500 - rr: 0.99141
+[Fri, 16 Apr 2021 13:14:07] INFO [base.py.index:158] indexing [1/?] - time: 0.52s - pairs_total: 107406/12497500 - rr_total: 0.99141
+[Fri, 16 Apr 2021 13:14:07] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:14:09] INFO [base.py._compute:742] comparing [1/?] - time: 2.26s - pairs: 107406
+[Fri, 16 Apr 2021 13:14:09] INFO [base.py._compute:751] comparing [1/?] - time: 2.26s - pairs_total: 107406
+[Fri, 16 Apr 2021 13:14:09] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Fri, 16 Apr 2021 13:14:27] INFO [base.py.__init__:58] indexing - initialize Index class
+[Fri, 16 Apr 2021 13:14:27] INFO [base.py.index:147] indexing [1/?] - time: 0.39s - pairs: 74458/12497500 - rr: 0.99404
+[Fri, 16 Apr 2021 13:14:27] INFO [base.py.index:158] indexing [1/?] - time: 0.39s - pairs_total: 74458/12497500 - rr_total: 0.99404
+[Fri, 16 Apr 2021 13:14:27] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Fri, 16 Apr 2021 13:14:29] INFO [base.py._compute:742] comparing [1/?] - time: 1.35s - pairs: 74458
+[Fri, 16 Apr 2021 13:14:29] INFO [base.py._compute:751] comparing [1/?] - time: 1.35s - pairs_total: 74458
+[Fri, 16 Apr 2021 13:14:29] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:05:23] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:05:23] INFO [base.py.index:147] indexing [1/?] - time: 0.58s - pairs: 98047/12497500 - rr: 0.99215
+[Mon, 19 Apr 2021 09:05:23] INFO [base.py.index:158] indexing [1/?] - time: 0.58s - pairs_total: 98047/12497500 - rr_total: 0.99215
+[Mon, 19 Apr 2021 09:05:23] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:05:25] INFO [base.py._compute:742] comparing [1/?] - time: 1.67s - pairs: 98047
+[Mon, 19 Apr 2021 09:05:25] INFO [base.py._compute:751] comparing [1/?] - time: 1.67s - pairs_total: 98047
+[Mon, 19 Apr 2021 09:06:59] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:06:59] INFO [base.py.index:147] indexing [1/?] - time: 0.42s - pairs: 88217/12497500 - rr: 0.99294
+[Mon, 19 Apr 2021 09:06:59] INFO [base.py.index:158] indexing [1/?] - time: 0.42s - pairs_total: 88217/12497500 - rr_total: 0.99294
+[Mon, 19 Apr 2021 09:06:59] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:07:00] INFO [base.py._compute:742] comparing [1/?] - time: 1.32s - pairs: 88217
+[Mon, 19 Apr 2021 09:07:01] INFO [base.py._compute:751] comparing [1/?] - time: 1.32s - pairs_total: 88217
+[Mon, 19 Apr 2021 09:07:01] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:07:01] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 13 iterations
+[Mon, 19 Apr 2021 09:07:01] INFO [base.py.fit:975] Classification - training computation time: ~0.18s
+[Mon, 19 Apr 2021 09:07:01] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:07:37] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:07:38] INFO [base.py.index:147] indexing [1/?] - time: 0.67s - pairs: 137920/12497500 - rr: 0.98896
+[Mon, 19 Apr 2021 09:07:38] INFO [base.py.index:158] indexing [1/?] - time: 0.67s - pairs_total: 137920/12497500 - rr_total: 0.98896
+[Mon, 19 Apr 2021 09:07:38] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:07:39] INFO [base.py._compute:742] comparing [1/?] - time: 1.84s - pairs: 137920
+[Mon, 19 Apr 2021 09:07:39] INFO [base.py._compute:751] comparing [1/?] - time: 1.84s - pairs_total: 137920
+[Mon, 19 Apr 2021 09:07:39] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:07:40] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 57 iterations
+[Mon, 19 Apr 2021 09:07:40] INFO [base.py.fit:975] Classification - training computation time: ~0.26s
+[Mon, 19 Apr 2021 09:07:40] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:07:57] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:07:58] INFO [base.py.index:147] indexing [1/?] - time: 0.45s - pairs: 106083/12497500 - rr: 0.99151
+[Mon, 19 Apr 2021 09:07:58] INFO [base.py.index:158] indexing [1/?] - time: 0.45s - pairs_total: 106083/12497500 - rr_total: 0.99151
+[Mon, 19 Apr 2021 09:07:58] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:07:59] INFO [base.py._compute:742] comparing [1/?] - time: 1.31s - pairs: 106083
+[Mon, 19 Apr 2021 09:07:59] INFO [base.py._compute:751] comparing [1/?] - time: 1.31s - pairs_total: 106083
+[Mon, 19 Apr 2021 09:07:59] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:07:59] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 14 iterations
+[Mon, 19 Apr 2021 09:07:59] INFO [base.py.fit:975] Classification - training computation time: ~0.11s
+[Mon, 19 Apr 2021 09:07:59] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:09:12] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:09:12] INFO [base.py.index:147] indexing [1/?] - time: 0.47s - pairs: 107109/12497500 - rr: 0.99143
+[Mon, 19 Apr 2021 09:09:12] INFO [base.py.index:158] indexing [1/?] - time: 0.47s - pairs_total: 107109/12497500 - rr_total: 0.99143
+[Mon, 19 Apr 2021 09:09:12] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:09:14] INFO [base.py._compute:742] comparing [1/?] - time: 1.38s - pairs: 107109
+[Mon, 19 Apr 2021 09:09:14] INFO [base.py._compute:751] comparing [1/?] - time: 1.38s - pairs_total: 107109
+[Mon, 19 Apr 2021 09:09:14] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:09:14] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 13 iterations
+[Mon, 19 Apr 2021 09:09:14] INFO [base.py.fit:975] Classification - training computation time: ~0.11s
+[Mon, 19 Apr 2021 09:09:14] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:10:56] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:10:57] INFO [base.py.index:147] indexing [1/?] - time: 0.43s - pairs: 99328/12497500 - rr: 0.99205
+[Mon, 19 Apr 2021 09:10:57] INFO [base.py.index:158] indexing [1/?] - time: 0.43s - pairs_total: 99328/12497500 - rr_total: 0.99205
+[Mon, 19 Apr 2021 09:10:57] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:10:58] INFO [base.py._compute:742] comparing [1/?] - time: 1.27s - pairs: 99328
+[Mon, 19 Apr 2021 09:10:58] INFO [base.py._compute:751] comparing [1/?] - time: 1.27s - pairs_total: 99328
+[Mon, 19 Apr 2021 09:10:58] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:10:58] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 15 iterations
+[Mon, 19 Apr 2021 09:10:58] INFO [base.py.fit:975] Classification - training computation time: ~0.13s
+[Mon, 19 Apr 2021 09:10:58] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:11:35] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:11:35] INFO [base.py.index:147] indexing [1/?] - time: 0.48s - pairs: 104062/12497500 - rr: 0.99167
+[Mon, 19 Apr 2021 09:11:35] INFO [base.py.index:158] indexing [1/?] - time: 0.48s - pairs_total: 104062/12497500 - rr_total: 0.99167
+[Mon, 19 Apr 2021 09:11:35] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:11:37] INFO [base.py._compute:742] comparing [1/?] - time: 1.61s - pairs: 104062
+[Mon, 19 Apr 2021 09:11:37] INFO [base.py._compute:751] comparing [1/?] - time: 1.61s - pairs_total: 104062
+[Mon, 19 Apr 2021 09:11:37] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:11:37] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 14 iterations
+[Mon, 19 Apr 2021 09:11:37] INFO [base.py.fit:975] Classification - training computation time: ~0.11s
+[Mon, 19 Apr 2021 09:11:37] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:13:09] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:13:09] INFO [base.py.index:147] indexing [1/?] - time: 0.47s - pairs: 93049/12497500 - rr: 0.99255
+[Mon, 19 Apr 2021 09:13:09] INFO [base.py.index:158] indexing [1/?] - time: 0.47s - pairs_total: 93049/12497500 - rr_total: 0.99255
+[Mon, 19 Apr 2021 09:13:09] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:13:11] INFO [base.py._compute:742] comparing [1/?] - time: 1.25s - pairs: 93049
+[Mon, 19 Apr 2021 09:13:11] INFO [base.py._compute:751] comparing [1/?] - time: 1.25s - pairs_total: 93049
+[Mon, 19 Apr 2021 09:13:11] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:13:11] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 13 iterations
+[Mon, 19 Apr 2021 09:13:11] INFO [base.py.fit:975] Classification - training computation time: ~0.12s
+[Mon, 19 Apr 2021 09:13:11] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:15:14] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:15:14] INFO [base.py.index:147] indexing [1/?] - time: 0.43s - pairs: 99756/12497500 - rr: 0.99202
+[Mon, 19 Apr 2021 09:15:14] INFO [base.py.index:158] indexing [1/?] - time: 0.43s - pairs_total: 99756/12497500 - rr_total: 0.99202
+[Mon, 19 Apr 2021 09:15:14] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:15:16] INFO [base.py._compute:742] comparing [1/?] - time: 1.39s - pairs: 99756
+[Mon, 19 Apr 2021 09:15:16] INFO [base.py._compute:751] comparing [1/?] - time: 1.39s - pairs_total: 99756
+[Mon, 19 Apr 2021 09:15:16] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:15:16] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 14 iterations
+[Mon, 19 Apr 2021 09:15:16] INFO [base.py.fit:975] Classification - training computation time: ~0.12s
+[Mon, 19 Apr 2021 09:15:16] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:15:46] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:16:51] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:17:12] INFO [base.py.index:147] indexing [1/?] - time: 20.65s - pairs: 6061513/1249975000 - rr: 0.99515
+[Mon, 19 Apr 2021 09:17:12] INFO [base.py.index:158] indexing [1/?] - time: 20.65s - pairs_total: 6061513/1249975000 - rr_total: 0.99515
+[Mon, 19 Apr 2021 09:17:12] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:18:10] INFO [base.py._compute:742] comparing [1/?] - time: 57.54s - pairs: 6061513
+[Mon, 19 Apr 2021 09:18:10] INFO [base.py._compute:751] comparing [1/?] - time: 57.54s - pairs_total: 6061513
+[Mon, 19 Apr 2021 09:18:10] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:18:17] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 11 iterations
+[Mon, 19 Apr 2021 09:18:17] INFO [base.py.fit:975] Classification - training computation time: ~6.97s
+[Mon, 19 Apr 2021 09:18:17] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:19:03] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:19:03] INFO [base.py.index:147] indexing [1/?] - time: 0.35s - pairs: 75323/12497500 - rr: 0.99397
+[Mon, 19 Apr 2021 09:19:03] INFO [base.py.index:158] indexing [1/?] - time: 0.35s - pairs_total: 75323/12497500 - rr_total: 0.99397
+[Mon, 19 Apr 2021 09:19:03] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:19:04] INFO [base.py._compute:742] comparing [1/?] - time: 1.01s - pairs: 75323
+[Mon, 19 Apr 2021 09:19:04] INFO [base.py._compute:751] comparing [1/?] - time: 1.01s - pairs_total: 75323
+[Mon, 19 Apr 2021 09:19:04] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:19:04] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 10 iterations
+[Mon, 19 Apr 2021 09:19:04] INFO [base.py.fit:975] Classification - training computation time: ~0.09s
+[Mon, 19 Apr 2021 09:19:04] INFO [base.py.predict:1032] Classification - predict matches and non-matches
+[Mon, 19 Apr 2021 09:19:14] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:20:49] INFO [base.py.__init__:58] indexing - initialize Index class
+[Mon, 19 Apr 2021 09:20:49] INFO [base.py.index:147] indexing [1/?] - time: 0.56s - pairs: 67182/12497500 - rr: 0.99462
+[Mon, 19 Apr 2021 09:20:49] INFO [base.py.index:158] indexing [1/?] - time: 0.56s - pairs_total: 67182/12497500 - rr_total: 0.99462
+[Mon, 19 Apr 2021 09:20:49] INFO [base.py.__init__:534] comparing - initialize Compare class
+[Mon, 19 Apr 2021 09:20:51] INFO [base.py._compute:742] comparing [1/?] - time: 1.54s - pairs: 67182
+[Mon, 19 Apr 2021 09:20:51] INFO [base.py._compute:751] comparing [1/?] - time: 1.54s - pairs_total: 67182
+[Mon, 19 Apr 2021 09:20:51] INFO [base.py.fit:937] Classification - start training ECMClassifier
+[Mon, 19 Apr 2021 09:20:51] INFO [nb_sklearn.py.fit:606] ECM algorithm converged after 11 iterations
+[Mon, 19 Apr 2021 09:20:51] INFO [base.py.fit:975] Classification - training computation time: ~0.13s
+[Mon, 19 Apr 2021 09:20:51] INFO [base.py.predict:1032] Classification - predict matches and non-matches

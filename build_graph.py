@@ -11,6 +11,7 @@ import neo4j
 from neo4j import GraphDatabase
 import logging
 import update_TCAD_data
+import string_grouper
 
 
 load_dotenv()
@@ -64,6 +65,29 @@ def get_corp_type_ids(curs):
 def get_tcad_data():
     df = update_TCAD_data.read_tcad()
     return df
+
+def make_address_groups(address_book):
+    pas = []
+    for row in address_book:
+        fn = row[0]
+        address1 = row[2]
+        #address2 = row[3]
+        city = row[4]
+        state = row[5]
+        zip_code = row[6]
+        zip_extension = row[7]
+        country = row[8]
+        pa = postal_address.address.Address(line1 = address1,
+            #line2 = address2,
+            city_name = city,
+            country_code = country,postal_code = zip_code).render()
+
+        pas.append(pa)
+
+    groups = string_grouper.string_grouper.group_similar_strings(pd.Series(pas))
+    print(groups[0:10])
+    return groups
+
 
 
 class Graph_Driver:
@@ -176,15 +200,14 @@ class Graph_Driver:
 
 
     @staticmethod
-    def _create_and_return_prop_owner_relation(tx,fn1,address1,zip_code):
+    def _create_and_return_prop_owner_relation(tx,fn1,address1,zip_code,pa):
         #creation of a property_owner type relation
-        result = tx.run("MATCH"
-                        "   (a:Business), "
-                        "   (b:Address) "
-
-                        "WHERE a.filing_num = $fn1 AND b.address1 = $address1  AND b.zip_code = $zip_code "
-                        "CREATE (b)-[r:is_property_owner]->(a) "
-                        "RETURN type(r)", address1 = address1, zip_code = zip_code)
+        result = tx.run("MATCH "
+                        "(a:Business) "
+                        "WHERE a.filing_num = $fn1 "
+                        "MATCH  (b:Address) WHERE  b.pa = $pa "
+                        "CREATE (a)-[r:is_property_owner]->(b) "
+                        "RETURN type(r)",fn1 = fn1, address1 = address1, zip_code = zip_code,pa = pa)
 
         return result.single()
 
@@ -195,21 +218,32 @@ class Graph_Driver:
         
         with self.driver.session() as session:
             i = 0
+            k = 0
             for j in range(len(prop_data)):
                 try:
 
                     busi = filing_num_dict[prop_data['prop_owner'][j]]
-                    address1 = prop_data['mail_add_2'][j]
-                    zip_code = prop_data['mail_zip'][j]
 
-                    result = session.write_transaction(self._create_and_return_prop_owner_relation,busi,address1,zip_code)
+                    address1 = prop_data['mail_add_2'][j]
+                    address2 = prop_data['mail_add_3'][j]
+                    zip_code = prop_data['mail_zip'][j]
+                    city = prop_data['mail_city'][j]
+                    # state = prop_data['mail_state']
+                    
+                    pa = postal_address.address.Address(line1 = address1,line2 = address2,city_name = city,country_code = "US",
+                        postal_code = zip_code).render()
+                   
+
+                    result = session.write_transaction(self._create_and_return_prop_owner_relation,busi,address1,zip_code,pa)
                     #print(result)
                     i += 1
                     if(i % 10000 ==0):
                         print(i) 
                         print(result)
                 except:
-                   pass
+                    k += 1
+                    if(k % 10000 ==0):
+                        print(j) 
 
                 
 
@@ -223,24 +257,32 @@ class Graph_Driver:
                 print("Found business: {record}".format(record=record))
 
 
-    def update_addresses(self,address_book):
+    def update_addresses(self,address_book,address_groups):
         
         with self.driver.session() as session:
             i = 0
-            for row in address_book:
+            
+            
+            for i in range(len(address_book)):
+                row = address_book[i]
+                gp = address_groups[i]
                 fn = row[0]
                 address1 = row[2]
-                address2 = row[3]
+                #address2 = row[3]
                 city = row[4]
                 state = row[5]
                 zip_code = row[6]
                 zip_extension = row[7]
                 country = row[8]
-                pa = postal_address.address.Address(line1 = address1,line2 = address2,city_name = city,
+                pa = postal_address.address.Address(line1 = address1,
+                    #line2 = address2,
+                    city_name = city,
                     country_code = country,postal_code = zip_code).render()
                 result = session.write_transaction(self._update_address,fn,
-                    address1,address2,city,state,zip_code,zip_extension,
-                    country,pa)
+                    address1,
+                    #address2,
+                    city,state,zip_code,zip_extension,
+                    country,pa,gp)
                 #print(result)
                 i +=1 
                 if(i % 1000000 ==0):
@@ -251,6 +293,7 @@ class Graph_Driver:
             result = session.write_transaction(self._create_address1_index)
             result = session.write_transaction(self._create_zip_code_index)
             result = session.write_transaction(self._create_pa_index)
+            result = session.write_transaction(self._create_gp_index)
             print(result)
     
     def update_corp_type_ids(self,corp_ids):
@@ -303,9 +346,16 @@ class Graph_Driver:
         result = tx.run(query)
         return(result)
     
+    @staticmethod
+    def _create_gp_index(tx):
+        #create an index on gp for fast matching
+        query = ("CREATE INDEX gp_index IF NOT EXISTS FOR (n:Address) ON (n.gp)")
+        result = tx.run(query)
+        return(result)
+    
 
     @staticmethod
-    def _merge_addresses(tx):
+    def _merge_addresses(tx,address_book):
         query = ("MATCH (A)-[r:is_at]->(B) "
             "WITH  count(r) as relsCount "
             "MATCH (A)-[r:is_at]->(B) "
@@ -320,9 +370,34 @@ class Graph_Driver:
             "WHERE count > 1 "
             "CALL apoc.refactor.mergeNodes(nodelist) yield node return node "
         )
-        
-        result = tx.run(query)
+        i = 0
+        for a in address_book:
+                address1 = a[2]
+                address2 = a[3]
+                city = a[4]
+                state = a[5]
+                zip_code = a[6]
+                zip_extension = a[7]
+                country = a[8]
+                pa = postal_address.address.Address(line1 = address1,city_name = city,
+                    country_code = country,postal_code = zip_code).render()
+
+                query = ("MATCH (a:Address {pa :$pa}) "
+                    "WITH COLLECT(a) AS nodes "
+                    "CALL apoc.refactor.mergeNodes(nodes) "
+                    "YIELD node "
+                    "RETURN node")
+                result = tx.run(query, pa = pa)
+                i += 1
+                if( i  % 100000 == 0): 
+                    print(i)
+
+        #result = tx.run(query)
         return(result)
+
+    def merge_addresses(self,address_book):
+        with self.driver.session() as session:
+            result = session.write_transaction(self._merge_addresses,address_book)
 
     @staticmethod
     def _find_and_return_business(tx, business_name):
@@ -347,12 +422,12 @@ class Graph_Driver:
 
     @staticmethod
     def _update_address(tx,fn,address1,address2,city,state,zip_code,
-            zip_extension,country,pa):
+            zip_extension,country,pa,gp):
 
         query = (
             "MATCH (s:Business) "
             "WHERE s.filing_num = $fn "
-            "CREATE (b:Address) "
+            "MERGE (b:Address {gp:$gp}) "
             "SET b.address1 = $address1 "
             "SET b.address2 = $address2 "
             "SET b.city = $city "
@@ -367,7 +442,7 @@ class Graph_Driver:
         result = tx.run(query,fn = fn, address1 = address1,
             address2 = address2, city = city, state = state, 
             zip_code = str(zip_code),zip_extension = str(zip_extension),
-            country = country,pa = pa)
+            country = country,pa = pa,gp = gp)
         return(result)
         
 
@@ -376,8 +451,8 @@ if __name__ == "__main__":
     
     master_filing_num_dict = get_filing_nums(cursor)
 
+   
     """
-    
     cob_relations = get_charter_officer_data(cursor)
     graph_driver.create_all_nodes(master_filing_num_dict)
     graph_driver.create_all_cob_edges(cob_relations, master_filing_num_dict)
@@ -388,17 +463,21 @@ if __name__ == "__main__":
     graph_driver.update_corp_type_ids(corp_ids)
     """
     
-    address_book = get_address_book(cursor) 
-    graph_driver.update_addresses(address_book)
+    address_book = get_address_book(cursor)
+    address_groups = make_address_groups(address_book)
+
     
     
+    #graph_driver.update_addresses(address_book)
+    
+    """
     rab_relations = get_registered_agent_business_data(cursor)
     graph_driver.create_all_rab_edges(rab_relations,master_filing_num_dict)
-    
-    #df = get_tcad_data()
-    #graph_driver.create_prop_owner_edges(df,master_filing_num_dict)
-
-    
-
+    """
+    """
+    df = get_tcad_data()
+    graph_driver.create_prop_owner_edges(df,master_filing_num_dict)
+    """
+    #graph_driver.merge_addresses(address_book)
     
     graph_driver.close()
