@@ -14,7 +14,6 @@ import update_TCAD_data
 import string_grouper
 import altair as alt
 alt.renderers.enable('mimetype')
-
 from splink import Splink
 
 
@@ -51,29 +50,82 @@ def get_business_names(conn):
 
     return df
 
+def get_addresses(conn):
+    sqlq = "SELECT filing_num,address1,zip_code,city FROM address;"
+    df = pd.read_sql_query(sqlq,conn)
+
+    return df
+
 if __name__ == "__main__":
 
     bn = get_business_names(conn)
+    bn['unique_id'] = bn.filing_num.map(hash)
     
-    spark = get_spark()
 
+    spark = get_spark()
+    bn = spark.createDataFrame(bn)
     settings = {
     "link_type": "dedupe_only",
-    "blocking_rules": [
-        "l.name = r.name"
+    "additional_columns_to_retain":[
+        "filing_num"
     ],
+    
     "comparison_columns": [
         {
             "col_name": "name",
             "term_frequency_adjustments": True},
-        {
-            "col_name": "filing_num",
-            "term_frequency_adjustments": True
-        }
+      
+    ],
+
+    "blocking_rules":[
+        "l.name = r.name"
     ]
+
+    }
+    
+    #linker = Splink(settings, df_or_dfs = bn, spark =  spark)
+    
+    #df_e = linker.get_scored_comparisons()
+
+    #print(df_e.head(10))
+    #print(df_e.count())
+    #print(df_e.columns)
+    
+
+    ad = get_addresses(conn)
+    ad['unique_id'] = (ad.address1+ad.filing_num).map(hash)
+    ad = spark.createDataFrame(ad)
+    settings = {
+    "link_type": "dedupe_only",
+    "additional_columns_to_retain":[
+        "filing_num"
+    ],
+    
+    "blocking_rules":[
+
+        "l.zip_code = r.zip_code",
+        "l.city = r.city",
+        "l.address1 = r.address1"
+
+
+
+    ],
+    "comparison_columns": [
+        {
+            "col_name": "address1",
+            "term_frequency_adjustments": True},
+             {
+            "col_name": "zip_code",
+            "term_frequency_adjustments": True}
+      
+    ]
+
     }
 
-
-    linker = Splink(settings, bn, spark =  spark)
+    linker = Splink(settings, df_or_dfs = ad, spark =  spark)
     
     df_e = linker.get_scored_comparisons()
+
+    print(df_e.head(10))
+    print(df_e.count())
+    print(df_e.columns)

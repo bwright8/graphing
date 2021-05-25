@@ -298,8 +298,9 @@ class Graph_Driver:
     
     def update_corp_type_ids(self,corp_ids):
 
-        with self.driver.session() as session:
+        with self.driver.session() as session: 
             i = 0
+            
             for row in corp_ids:
                 fn = row[0]
                 id = row[1]

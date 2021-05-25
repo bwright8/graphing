@@ -1,0 +1,400 @@
+ndows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe" c:/Users/bwrig/OneDri& "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe" c:/Users/bwrig/OneDrive/Documents/GitHub/graphing/splinker.py
+& : The term 'C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe' is not    
+recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was      
+included, verify that the path is correct and try again.
+At line:1 char:3
++ & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3 ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + FullyQualifiedErrorId : CommandNotFoundException
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe" c:/Users/bwrig/OneDrive/Documents/GitHub/graphing/splinker.py
+& : The term 'C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe' is not    
+recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was      
+included, verify that the path is correct and try again.
+At line:1 char:3
++ & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3 ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:/Program File...0/python3.8.exe:String) [], CommandNotFoundException
+ 
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing>
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe" c:/Users/bwrig/OneDrive/Documents/GitHub/graphing/splinker.py
+& : The term 'C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe' is not    
+recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was      
+included, verify that the path is correct and try again.
+At line:1 char:3
++ & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3 ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:/Program File...0/python3.8.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> wsl
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 4.19.128-microsoft-standard x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon May 10 13:22:20 EDT 2021
+
+  System load:  0.0                Processes:             8
+  Usage of /:   3.4% of 250.98GB   Users logged in:       0
+  Memory usage: 1%                 IPv4 address for eth0: 172.26.51.62
+
+0 updates can be installed immediately.
+0 of these updates are security updates.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+This message is shown once a day. To disable it please create the
+/home/bwright/.hushlogin file.
+bwright@LAPTOP-444KFICT:/mnt/c/Users/bwrig/OneDrive/Documents/GitHub/graphing$ exit
+logout
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 13:22:53 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Traceback (most recent call last):
+  File "splinker.py", line 76, in <module>
+    bn = bn.toPandas()
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\core\generic.py", line 5139, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'toPandas'
+SUCCESS: The process with PID 4260 (child process of PID 4588) has been terminated.
+SUCCESS: The process with PID 4588 (child process of PID 19908) has been terminated.
+SUCCESS: The process with PID 19908 (child process of PID 22108) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe" c:/Users/bwrig/OneDrive/Documents/GitHub/graphing/splinker.py
+& : The term 'C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe' is not 
+recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was      
+included, verify that the path is correct and try again.
+At line:1 char:3
++ & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3 ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:/Program File...0/python3.8.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 13:23:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 13:23:51 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+21/05/10 13:23:53 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+Traceback (most recent call last):
+  File "splinker.py", line 76, in <module>
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.py", line 72, in __init__
+    self.df = vertically_concatenate_datasets(dfs)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 922, in wrapper
+    check_argument_types(memo)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 768, in check_argument_types
+    raise TypeError(*exc.args) from None
+TypeError: type of argument "dfs" must be a list; got pandas.core.frame.DataFrame instead
+SUCCESS: The process with PID 18236 (child process of PID 9800) has been terminated.
+SUCCESS: The process with PID 9800 (child process of PID 25312) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+Traceback (most recent call last):
+  File "splinker.py", line 18, in <module>
+    from splink import Splink
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.py", line 31, in <module>
+    class Splink:
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.py", line 35, in Splink
+    df_or_dfs: pandas.core.frame.DataFrame,
+NameError: name 'pandas' is not defined
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 13:26:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 13:26:21 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+Traceback (most recent call last):
+  File "splinker.py", line 76, in <module>
+    linker = Splink(settings, df_or_dfs = bn, spark =  spark)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 923, in wrapper
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.py", line 72, in __init__
+    self.df = vertically_concatenate_datasets(dfs)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 922, in wrapper
+    check_argument_types(memo)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 768, in check_argument_types
+    raise TypeError(*exc.args) from None
+TypeError: type of argument "dfs" must be a list; got pandas.core.frame.DataFrame instead
+SUCCESS: The process with PID 25592 (child process of PID 23992) has been terminated.
+SUCCESS: The process with PID 23992 (child process of PID 15500) has been terminated.
+SUCCESS: The process with PID 15500 (child process of PID 12460) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 13:27:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 13:27:57 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+Traceback (most recent call last):
+  File "splinker.py", line 76, in <module>
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.py", line 71, in __init__
+    self.df = vertically_concatenate_datasets(dfs)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 922, in wrapper
+    check_argument_types(memo)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 768, in check_argument_types
+    raise TypeError(*exc.args) from None
+TypeError: type of argument "dfs" must be a list; got pandas.core.frame.DataFrame instead
+SUCCESS: The process with PID 21424 (child process of PID 29108) has been terminated.
+SUCCESS: The process with PID 29108 (child process of PID 26328) has been terminated.
+SUCCESS: The process with PID 26328 (child process of PID 25952) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 13:29:38 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 13:29:51 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+Traceback (most recent call last):
+  File "splinker.py", line 76, in <module>
+    linker = Splink(settings, df_or_dfs = bn, spark =  spark)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 923, in wrapper
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.py", line 72, in __init__
+    self.df = vertically_concatenate_datasets(dfs)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 922, in wrapper
+    check_argument_types(memo)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 768, in check_argument_types
+    raise TypeError(*exc.args) from None
+TypeError: type of argument "dfs" must be a list; got pandas.core.frame.DataFrame instead
+SUCCESS: The process with PID 28468 (child process of PID 27468) has been terminated.
+SUCCESS: The process with PID 27468 (child process of PID 24764) has been terminated.
+SUCCESS: The process with PID 24764 (child process of PID 14600) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 13:31:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 13:31:28 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+Traceback (most recent call last):
+  File "splinker.py", line 76, in <module>
+    linker = Splink(settings, df_or_dfs = bn, spark =  spark)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 923, in wrapper
+    retval = func(*args, **kwargs)
+e-packages\splink\__init__.py", line 72, in __init__
+    self.df = vertically_concatenate_datasets(dfs)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 922, in wrapper
+    check_argument_types(memo)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 768, in check_argument_types
+    raise TypeError(*exc.args) from None
+TypeError: type of argument "dfs" must be a list; got pandas.core.frame.DataFrame instead
+SUCCESS: The process with PID 27200 (child process of PID 17056) has been terminated.
+SUCCESS: The process with PID 17056 (child process of PID 27396) has been terminated.
+SUCCESS: The process with PID 27396 (child process of PID 29200) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe" c:/Users/bwrig/OneDrive/Documents/GitHub/graphing/splinker.py
+& : The term 'C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3.8.2288.0_x64__qbz5n2kfra8p0/python3.8.exe' is not 
+recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was      
+included, verify that the path is correct and try again.
+At line:1 char:3
++ & "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.8_3 ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:/Program File...0/python3.8.exe:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 13:34:39 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 13:34:51 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+Traceback (most recent call last):
+  File "splinker.py", line 76, in <module>
+    linker = Splink(settings, df_or_dfs = bn, spark =  spark)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 923, in wrapper
+twareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.ptwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\sity", line 768, in check_argument_types
+    raise TypeError(*exc.args) from None
+TypeError: type of argument "dfs"[0] must be pyspark.sqtwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\sitl.dataframe.DataFrame; got pandas.core.frame.DataFrame 
+instead
+SUCCESS: The process with PID 14600 (child process of PtwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\sitID 21216) has been terminated.                         rgument_types
+SUCCESS: The process with PID 21216 (child process of PID 28908) has been terminated.                         l.dataframe.DataFrame; got pandas.core.frame.DataFrame instead
+SUCCESS: The process with PID 28908 (child process of PID 21216) has been terminated.ID 12004) has been terminated.                        pID 28908) has been terminated.ython3 splinker.pyOneDrive\Documents\GitHub\graphing>  ID 12004) has been terminated.
+21/05/10 13:39:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 13:39:24 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+21/05/10 13:41:47 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+[Stage 0:>
+
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such 
+as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+Traceback (most recent call last):
+  File "splinker.py", line 74, in <module>
+    linker = Splink(settings, df_or_dfs = bn, spark =  
+spark)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init__.py", line 923, in wrapper
+    retval = func(*args, **kwargs)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.py", line 73, in __init__
+    validate_input_datasets(self.df, self.model.current_settings_obj)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\validate.py", line 110, in validate_input_datasets
+    raise ValueError(
+ValueError: Cannot find columns {'unique_id'} For Splink to be work with the settings provided, your input dataframes must  include the following columns {'filing_num', 'name', 'unique_id'}
+SUCCESS: The process with PID 3484 (child process of PID 8124) has been terminated.
+SUCCESS: The process with PID 8124 (child process of PID 26492) has been terminated.
+SUCCESS: The process with PID 26492 (child process of PID 2644) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 18:57:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 18:58:12 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+21/05/10 19:00:08 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+Traceback (most recent call last):
+  File "splinker.py", line 70, in <module>
+    linker = Splink(settings, df_or_dfs = bn, spark =  spark)
+twareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\loctwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\typeguard\__init_ line 110, in validate_input_datasets
+    raise ValueError(
+ValueError: Cannot find columns {'unique_id'} For SplintwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\__init__.pk to be work with the settings provided, your input dataframes must  include the following columns {'name', 'u_settings_obj)nique_id'}                                             twareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\validate.p
+SUCCESS: The process with PID 4732 (child process of PInput_datasetsD 4392) has been terminated.
+SUCCESS: The process with PID 4392 (child process of PIk to be work with the settings provided, your input dataframes must  include the following columns {'name',D 27964) has been terminated.
+SUCCESS: The process with PID 27964 (child process of PD 4392) has been terminated.PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> pD 27964) has been terminated.ython3 splinker.py                                     ID 2888) has been terminated.
+Traceback (most recent call last):
+  File "splinker.py", line 56, in <module>
+    bn['unique_id'] = bn.longstrings.map(hash)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\core\generic.py", line 5139, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'longstrings'
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 19:06:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 19:06:39 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+21/05/10 19:08:56 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+[Stage 0:>
+
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such 
+as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+21/05/10 19:09:04 WARN TaskSetManager: Stage 10 contains a task of very large size (121766 KiB). The maximum recommended task size is 1000 KiB.
+[Stage 10:>
+[Stage 10:>
+[Stage 10:=============================>
+[Stage 11:>
+[Stage 11:==============>
+[Stage 11:=====================>
+[Stage 11:=============================>
+[Stage 11:====================================>        
+[Stage 11:===========================================> 
+[Stage 11:=============================================
+[Mon, 10 May 2021 19:10:30] INFO [iterate.py.iterate:45] Iteration 0 complete
+[Mon, 10 May 2021 19:10:30] INFO [model.py.is_converged:115] The maximum change in parameters was 0.9 for key 
+name, level 1
+[Mon, 10 May 2021 19:10:31] INFO [iterate.py.iterate:45] Iteration 1 complete
+[Mon, 10 May 2021 19:10:31] INFO [model.py.is_converged:115] The maximum change in parameters was 0.0 for key 
+proportion_of_matches
+[Mon, 10 May 2021 19:10:31] INFO [iterate.py.iterate:50] EM algorithm has converged
+[Stage 49:>
+[Stage 49:==============>
+[Stage 49:=====================>
+[Stage 49:=============================>
+[Stage 49:====================================>        
+[Stage 49:===========================================> 
+[Stage 49:=============================================                                                       C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\term_frequencies.py:69: UserWarning: There were no comparisons in column filing_num which were in the highest level of similarity, so no adjustment could be made
+  warnings.warn(
+SUCCESS: The process with PID 27936 (child process of PID 27176) has been terminated.
+SUCCESS: The process with PID 27176 (child process of PID 29080) has been terminated.
+SUCCESS: The process with PID 29080 (child process of PID 17936) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 19:45:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 19:45:28 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+21/05/10 19:46:37 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+21/05/10 19:46:40 WARN TaskSetManager: Stage 6 contains a task of very large size (121766 KiB). The maximum recommended task size is 1000 KiB.
+[Mon, 10 May 2021 19:47:11] INFO [iterate.py.iterate:45] Iteration 0 complete
+[Mon, 10 May 2021 19:47:11] INFO [model.py.is_converged:115] The maximum change in parameters was 0.9 for key name, level 1
+[Mon, 10 May 2021 19:47:12] INFO [iterate.py.iterate:45] Iteration 1 complete
+[Mon, 10 May 2021 19:47:12] INFO [model.py.is_converged:115] The maximum change in parameters was 0.0 for key proportion_of_matches
+[Mon, 10 May 2021 19:47:12] INFO [iterate.py.iterate:50] EM algorithm has converged
+SUCCESS: The process with PID 20800 (child process of PID 6684) has been terminated.
+SUCCESS: The process with PID 6684 (child process of PID 1264) has been terminated.
+SUCCESS: The process with PID 1264 (child process of PID 25128) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 19:51:56 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 19:52:09 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+21/05/10 19:53:25 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+21/05/10 19:53:28 WARN TaskSetManager: Stage 10 contains a task of very large size (121766 KiB). The maximum recommended task size is 1000 KiB.
+[Mon, 10 May 2021 19:54:05] INFO [iterate.py.iterate:45] Iteration 0 complete
+[Mon, 10 May 2021 19:54:05] INFO [model.py.is_converged:115] The maximum change in parameters was 0.9 for key name, level 1
+[Mon, 10 May 2021 19:54:06] INFO [iterate.py.iterate:45] Iteration 1 complete
+[Mon, 10 May 2021 19:54:06] INFO [model.py.is_converged:115] The maximum change in parameters was 0.0 for key proportion_of_matches
+[Mon, 10 May 2021 19:54:06] INFO [iterate.py.iterate:50] EM algorithm has converged
+SUCCESS: The process with PID 23676 (child process of PID 23236) has been terminated.
+SUCCESS: The process with PID 23236 (child process of PID 11968) has been terminated.
+SUCCESS: The process with PID 11968 (child process of PID 11360) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/10 19:58:38 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/10 19:58:50 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+21/05/10 20:00:11 WARN TaskSetManager: Stage 10 contains a task of very large size (121766 KiB). The maximum recommended task size is 1000 KiB.
+[Mon, 10 May 2021 20:00:48] INFO [iterate.py.iterate:45] Iteration 0 complete
+[Mon, 10 May 2021 20:00:48] INFO [model.py.is_converged:115] The maximum change in parameters was 0.9 for key name, level 1
+[Mon, 10 May 2021 20:00:50] INFO [iterate.py.iterate:45] Iteration 1 complete
+[Mon, 10 May 2021 20:00:50] INFO [model.py.is_converged:115] The maximum change in parameters was 0.0 for key proportion_of_matches
+[Mon, 10 May 2021 20:00:50] INFO [iterate.py.iterate:50] EM algorithm has converged
+SUCCESS: The process with PID 28740 (child process of PID 12504) has been terminated.
+SUCCESS: The process with PID 12504 (child process of PID 25428) has been terminated.
+SUCCESS: The process with PID 25428 (child process of PID 28300) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> python3 splinker.py
+21/05/11 08:17:21 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/05/11 08:17:40 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
+21/05/11 08:18:55 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\case_statements.py:19: UserWarning: Custom string comparison functions such as jaro_winkler_sim are available in Spark Or you did not pass 'spark' (the SparkSession) into 'Model' You can import these functions using the scala-udf-similarity-0.0.7.jar provided with Splink
+  warnings.warn(
+21/05/11 08:18:58 WARN TaskSetManager: Stage 10 contains a task of very large size (121766 KiB). The maximum recommended task size is 1000 KiB.
+[Tue, 11 May 2021 08:19:39] INFO [iterate.py.iterate:45] Iteration 0 complete
+[Tue, 11 May 2021 08:19:39] INFO [model.py.is_converged:115] The maximum change in parameters was 0.9 for key name, level 1
+[Tue, 11 May 2021 08:19:41] INFO [iterate.py.iterate:45] Iteration 1 complete
+[Tue, 11 May 2021 08:19:41] INFO [model.py.is_converged:115] The maximum change in parameters was 0.0 for key proportion_of_matches
+[Tue, 11 May 2021 08:19:41] INFO [iterate.py.iterate:50] EM algorithm has converged
+C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\splink\term_frequencies.py:69: UserWarning: There were no comparisons in column filing_num which were in the highest level of similarity, so no adjustment could be made
+  warnings.warn(
+[Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=3065594890466809415, unique_id_r=5466879162912294834, name_l='"M" SYSTEM CORPORATION', name_r='"M" SYSTEM CORPORATION', gamma_name=1, filing_num_l='7357300', filing_num_r='7393400', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=-4558870984751266721, unique_id_r=6610875523314829760, name_l='"STEVENS RESEARCH & TRADING, LTD."', name_r='"STEVENS RESEARCH & TRADING, LTD."', gamma_name=1, filing_num_l='10077210', filing_num_r='10077110', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=-5853053048477544042, unique_id_r=-4726902817093706192, name_l='#1 FLYING SOMBRERO CORPORATION', name_r='#1 FLYING SOMBRERO CORPORATION', gamma_name=1, filing_num_l='800136503', filing_num_r='800138505', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=-979755257770785320, unique_id_r=3784528881254159302, name_l='1 DESIGN GROUP, INC.', name_r='1 DESIGN GROUP, INC.', gamma_name=1, filing_num_l='802082905', filing_num_r='802073572', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=4488886761329747217, unique_id_r=4987398880874987674, name_l='1 HOUR GOLF CORPORATION', name_r='1 HOUobability=0.30000001192092896, unique_id_l=-5721715283407965903, unique_id_r=2410186910145356404, name_l='1 RIVER VENTURES, LLC', name_r='1 RIVER VENTURES, LLC', 
+gamma_name=1, filing_num_l='800594353', filing_num_r='800605481', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=-3890431317770644902, unique_id_r=4174958890090657272, name_l='1 TEN BASKETBALL', name_r='1 TEN BASKETBALL', gamma_name=1, filing_num_l='802239098', filing_num_r='802260025', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=-2547973131309105909, unique_id_r=1267846206650154762, name_l='1012 VENTURES, LLC', name_r='1012 VENTURES, LLC', gamma_name=1, filing_num_l='800959090', filing_num_r='802317478', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=-9028389710533552838, unique_id_r=-5656896810535232474, name_l='1031 EXPERTS, LLC', name_r='1031 EXPERTS, LLC', gamma_name=1, filing_num_l='800768623', filing_num_r='800822640', gamma_filing_num=0), Row(tf_adjusted_match_prob=0.30000001192092896, match_probability=0.30000001192092896, unique_id_l=-1868540985689129449, unique_id_r=2369584682670742214, name_l='105 BARROWS PLACE DEVELOPMENT, LLC', name_r='105 BARROWS PLACE DEVELOPMENT, LLC', gamma_name=1, filing_num_l='800692656', filing_num_r='800717548', gamma_filing_num=0)]
+SUCCESS: The process with PID 30948 (child process of PID 30896) has been terminated.
+SUCCESS: The process with PID 30896 (child process of PID 30848) has been terminated.
+SUCCESS: The process with PID 30848 (child process of PID 31464) has been terminated.
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> which can be left aside for now, but will be used in the proof of
+which : The term 'which' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was 
+included, verify that the path is correct and try again.
+At line:1 char:1
++ which can be left aside for now, but will be used in the proof of
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (which:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\bwrig\OneDrive\Documents\GitHub\graphing> 
