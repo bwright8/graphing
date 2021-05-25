@@ -26,9 +26,11 @@ def get_spark():
     # WARNING:
     # These config options are appropriate only if you're running Spark locally!!!
     conf.set("spark.driver.memory", "1g")
-    conf.set("spark.sql.shuffle.partitions", "16")
+    conf.set("spark.sql.shuffle.partitions", "2")
     
-   # conf.set("spark.sql.files.maxPartitionBytes","134217728")	
+    #conf.set("spark.sql.files.maxPartitionBytes","536870912")	
+    conf.set("spark.sql.files.maxPartitionBytes","500000000")	
+    #.set("spark.sql.files.maxPartitionBytes","134217728")	
 
     sc = SparkContext.getOrCreate(conf=conf)
     sc.setCheckpointDir("temp_graphframes/")

@@ -5,13 +5,11 @@ import pandas as pd
 import psycopg2
 from psycopg2 import sql
 import psycopg2.extras as extras
-import postal_address
 
 import neo4j
 from neo4j import GraphDatabase
 import logging
 import update_TCAD_data
-import string_grouper
 import altair as alt
 alt.renderers.enable('mimetype')
 from splink import Splink
@@ -113,6 +111,9 @@ if __name__ == "__main__":
     "comparison_columns": [
         {
             "col_name": "address1",
+            "term_frequency_adjustments": True},
+            {
+            "col_name": "city",
             "term_frequency_adjustments": True},
              {
             "col_name": "zip_code",
