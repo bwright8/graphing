@@ -11,7 +11,7 @@ import neo4j
 from neo4j import GraphDatabase
 import logging
 import update_TCAD_data
-import string_grouper
+#import string_grouper
 
 
 load_dotenv()
