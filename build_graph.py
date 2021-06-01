@@ -5,13 +5,12 @@ import pandas as pd
 import psycopg2
 from psycopg2 import sql
 import psycopg2.extras as extras
-import postal_address
 
 import neo4j
 from neo4j import GraphDatabase
 import logging
 import update_TCAD_data
-#import string_grouper
+# import string_grouper
 
 
 load_dotenv()
@@ -68,6 +67,7 @@ def get_tcad_data():
 
 def make_address_groups(address_book):
     pas = []
+    #this method is not practical
     for row in address_book:
         fn = row[0]
         address1 = row[2]
@@ -84,8 +84,8 @@ def make_address_groups(address_book):
 
         pas.append(pa)
 
-    groups = string_grouper.string_grouper.group_similar_strings(pd.Series(pas))
-    print(groups[0:10])
+    #groups = string_grouper.string_grouper.group_similar_strings(pd.Series(pas))
+    #print(groups[0:10])
     return groups
 
 
@@ -126,6 +126,9 @@ class Graph_Driver:
 
     def create_all_nodes(self,cob_node_data_dictionary):
         #method to create all nodes for the graph, to populate it
+
+        print("Now creating business nodes...\n")
+
         with self.driver.session() as session:
             i = 0
             for key in cob_node_data_dictionary.keys():
@@ -140,6 +143,8 @@ class Graph_Driver:
             print(result)
             
     def create_all_cob_edges(self,cob_data,filing_num_dict):
+
+        print("Now creating charter officer business edges...\n")
 
         #method to populate charter-officer-business edges for the graph
         
@@ -177,6 +182,8 @@ class Graph_Driver:
 
 
     def create_all_rab_edges(self,rab_data,filing_num_dict):
+
+        print("Now creating registered agent business edges...\n")
 
         #method to populate registered-agent-business edges for the graph
         
@@ -258,6 +265,8 @@ class Graph_Driver:
 
 
     def update_addresses(self,address_book,address_groups):
+
+        print("Now creating address nodes...\n")
         
         with self.driver.session() as session:
             i = 0
@@ -298,9 +307,10 @@ class Graph_Driver:
     
     def update_corp_type_ids(self,corp_ids):
 
-        with self.driver.session() as session: 
+        print("Now updating corp type ids...\n")
+
+        with self.driver.session() as session:
             i = 0
-            
             for row in corp_ids:
                 fn = row[0]
                 id = row[1]
@@ -357,6 +367,7 @@ class Graph_Driver:
 
     @staticmethod
     def _merge_addresses(tx,address_book):
+        #this method is slow and does not yield results
         query = ("MATCH (A)-[r:is_at]->(B) "
             "WITH  count(r) as relsCount "
             "MATCH (A)-[r:is_at]->(B) "
@@ -453,7 +464,7 @@ if __name__ == "__main__":
     master_filing_num_dict = get_filing_nums(cursor)
 
    
-    """
+    
     cob_relations = get_charter_officer_data(cursor)
     graph_driver.create_all_nodes(master_filing_num_dict)
     graph_driver.create_all_cob_edges(cob_relations, master_filing_num_dict)
@@ -462,19 +473,19 @@ if __name__ == "__main__":
     
     corp_ids = get_corp_type_ids(cursor)
     graph_driver.update_corp_type_ids(corp_ids)
-    """
+    
     
     address_book = get_address_book(cursor)
-    address_groups = make_address_groups(address_book)
 
+    #address_groups = make_address_groups(address_book)
+    #this method as it stands is too slow
+
+    graph_driver.update_addresses(address_book)
     
     
-    #graph_driver.update_addresses(address_book)
-    
-    """
     rab_relations = get_registered_agent_business_data(cursor)
     graph_driver.create_all_rab_edges(rab_relations,master_filing_num_dict)
-    """
+
     """
     df = get_tcad_data()
     graph_driver.create_prop_owner_edges(df,master_filing_num_dict)

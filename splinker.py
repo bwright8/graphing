@@ -18,7 +18,7 @@ from splink import Splink
 logging.basicConfig()  # Means logs will print in Jupyter Lab
 logging.getLogger("splink").setLevel(logging.INFO)
 os.environ["hadoop.home.dir"] =  "C:\\"
-os.environ["HADOOP_HOME"] =  "C:\\Users\\bwrig\\Downloads\\hadoop-3.1.0"
+os.environ["HADOOP_HOME"] =  "C:\\Users\\bwrig\\Downloads\\hadoop-3.1.0" #change to your hadoop instalation
 
 os.environ['PYSPARK_SUBMIT_ARGS'] = '--master local[2] pyspark-shell'
 
@@ -81,14 +81,15 @@ if __name__ == "__main__":
 
     }
     
-    #linker = Splink(settings, df_or_dfs = bn, spark =  spark)
+    linker = Splink(settings, df_or_dfs = bn, spark =  spark)
     
-    #df_e = linker.get_scored_comparisons()
+    df_e = linker.get_scored_comparisons()
 
-    #print(df_e.head(10))
-    #print(df_e.count())
-    #print(df_e.columns)
+    print(df_e.head(10))
+    print(df_e.count())
+    print(df_e.columns)
     
+    """
 
     ad = get_addresses(conn)
     ad['unique_id'] = (ad.address1+ad.filing_num).map(hash)
@@ -130,3 +131,4 @@ if __name__ == "__main__":
     print(df_e.head(10))
     print(df_e.count())
     print(df_e.columns)
+    """

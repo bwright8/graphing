@@ -5,3 +5,4 @@ neo4j
 logging
 altair
 splink
+pyspark

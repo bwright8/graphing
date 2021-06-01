@@ -9752,3 +9752,83 @@ Traceback (most recent call last):
   File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1115, in start
     self.socket.connect((self.address, self.port))
 ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+[Tue, 25 May 2021 13:20:59] INFO [java_gateway.py.send_command:1195] Error while sending.
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1193, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+[Tue, 25 May 2021 13:20:59] INFO [java_gateway.py.send_command:1047] Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1193, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1196, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+[Tue, 25 May 2021 13:21:01] ERROR [java_gateway.py.start:1126] An error occurred while trying to connect to the Java server (127.0.0.1:59259)
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1193, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1196, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 977, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1115, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+[Tue, 01 Jun 2021 12:53:21] INFO [iterate.py.iterate:45] Iteration 0 complete
+[Tue, 01 Jun 2021 12:53:21] INFO [model.py.is_converged:115] The maximum change in parameters was 0.9 for key name, level 1
+[Tue, 01 Jun 2021 12:53:22] INFO [iterate.py.iterate:45] Iteration 1 complete
+[Tue, 01 Jun 2021 12:53:22] INFO [model.py.is_converged:115] The maximum change in parameters was 0.0 for key proportion_of_matches
+[Tue, 01 Jun 2021 12:53:22] INFO [iterate.py.iterate:50] EM algorithm has converged
+[Tue, 01 Jun 2021 12:56:31] INFO [java_gateway.py.send_command:1210] Error while receiving.
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+[Tue, 01 Jun 2021 12:56:31] ERROR [java_gateway.py.send_command:1050] Exception while sending command.
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.2800.0_x64__qbz5n2kfra8p0\lib\socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "C:\Users\bwrig\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\py4j\java_gateway.py", line 1211, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while receiving
+[Tue, 01 Jun 2021 13:20:00] INFO [iterate.py.iterate:45] Iteration 0 complete
+[Tue, 01 Jun 2021 13:20:00] INFO [model.py.is_converged:115] The maximum change in parameters was 0.9 for key name, level 1
+[Tue, 01 Jun 2021 13:20:01] INFO [iterate.py.iterate:45] Iteration 1 complete
+[Tue, 01 Jun 2021 13:20:01] INFO [model.py.is_converged:115] The maximum change in parameters was 0.0 for key proportion_of_matches
+[Tue, 01 Jun 2021 13:20:01] INFO [iterate.py.iterate:50] EM algorithm has converged
